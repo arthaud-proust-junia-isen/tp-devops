@@ -1,6 +1,8 @@
 services:
   php:
     build: ./.docker/.
+    env_file:
+      - ./.env
     volumes:
       - ./:/var/www/html/croupier
     networks:
@@ -9,7 +11,7 @@ services:
   nginx:
     image: nginx:1.29.1
     ports:
-      - "80:80"
+      - "${APP_PORT:-80}:80"
     volumes:
       - ./:/var/www/html/croupier
       - ./.docker/nginx.conf:/etc/nginx/conf.d/default.conf
@@ -21,9 +23,9 @@ services:
   mysql:
     image: 'mysql/mysql-server:8.0'
     environment:
-      MYSQL_ROOT_PASSWORD: '${PASS}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
       MYSQL_ROOT_HOST: '%'
-      MYSQL_DATABASE: '${BASE}'
+      MYSQL_DATABASE: '${DB_NAME}'
     volumes:
       - 'croupier-mysql:/var/lib/mysql'
       - './.docker/init.sql:/docker-entrypoint-initdb.d/init.sql'

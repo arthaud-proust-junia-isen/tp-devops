@@ -1,11 +1,6 @@
 <?php
-	$base = 'site';
-	$pass = 'mnVkrECAWnj96Yk4';
-	$user = 'root';
-	$host = 'mysql';
-
-	//$base = 'qdeclercq';
-	//$pass = '90su39vi';
-	//$user = 'qdeclercq';
-	//$host = 'localhost';
+	$base = getenv('DB_NAME') ?? 'site';
+	$pass = getenv('DB_PASSWORD') ?? 'mnVkrECAWnj96Yk4';
+	$user = getenv('DB_USER') ?? 'root';
+	$host = getenv('DB_HOST') ?? 'localhost';
 ?>

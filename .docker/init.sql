@@ -1,9 +1,9 @@
 -- Créer la base
-CREATE DATABASE IF NOT EXISTS site
+CREATE DATABASE IF NOT EXISTS croupier
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_general_ci;
 
-USE site;
+USE croupier;
 
 -- Créer la table users
 CREATE TABLE IF NOT EXISTS users (
