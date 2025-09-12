@@ -2,7 +2,7 @@
 	$base = 'site';
 	$pass = 'mnVkrECAWnj96Yk4';
 	$user = 'root';
-	$host = 'localhost';
+	$host = 'mysql';
 
 	//$base = 'qdeclercq';
 	//$pass = '90su39vi';
