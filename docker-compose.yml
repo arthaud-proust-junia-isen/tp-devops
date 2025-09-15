@@ -2,8 +2,12 @@ services:
   php:
     build: ./.docker/.
     image: arthaudproust1/croupeirb-php
-    env_file:
-      - ./.env
+    environment:
+      - APP_PORT
+      - DB_USER
+      - DB_HOST
+      - DB_NAME
+      - DB_PASSWORD
     volumes:
       - ./:/var/www/html/croupier
     networks:
